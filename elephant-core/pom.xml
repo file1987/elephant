@@ -9,8 +9,8 @@
 	<artifactId>IFelephant-core</artifactId>
 	<name>${project.artifactId}-${project.version}</name>
 	<properties>
-	<version.log4j>1.2.17</version.log4j>
-	<version.mina>2.0.7</version.mina>
+		<version.log4j>1.2.16</version.log4j>
+		<version.mina>2.0.7</version.mina>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -24,44 +24,83 @@
 			<version>5.0.0.Alpha1</version>
 			<scope>compile</scope>
 		</dependency>
-		  <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>${version.log4j}</version>
-      </dependency>
-      <dependency>
-	      <groupId>org.apache.mina</groupId>
-	      <artifactId>mina-core</artifactId>
-	      <version>${version.mina}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.lmax</groupId>
-        <artifactId>disruptor</artifactId>
-        <version>3.2.1</version>
-      </dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${version.log4j}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.mina</groupId>
+			<artifactId>mina-core</artifactId>
+			<version>${version.mina}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.lmax</groupId>
+			<artifactId>disruptor</artifactId>
+			<version>3.2.1</version>
+		</dependency>
 
-      <dependency>
-      	<groupId>io.undertow</groupId>
-      	<artifactId>undertow-core</artifactId>
-      	<version>1.0.6.Final</version>
-      </dependency>
-      <dependency>
-      	<groupId>io.undertow</groupId>
-      	<artifactId>undertow-servlet</artifactId>
-      	<version>1.0.6.Final</version>
-      </dependency>
-       <dependency>
-      	<groupId>io.undertow</groupId>
-      	<artifactId>undertow-examples</artifactId>
-      	<version>1.0.6.Final</version>
-      </dependency>
-      
-       <!-- Jetty -->  
-        <dependency>  
-            <groupId>org.eclipse.jetty.aggregate</groupId>  
-            <artifactId>jetty-all</artifactId>  
-            <version>9.1.4.v20140401</version>  
-        </dependency>  
- 
+		<dependency>
+			<groupId>io.undertow</groupId>
+			<artifactId>undertow-core</artifactId>
+			<version>1.0.6.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>io.undertow</groupId>
+			<artifactId>undertow-servlet</artifactId>
+			<version>1.0.6.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>io.undertow</groupId>
+			<artifactId>undertow-examples</artifactId>
+			<version>1.0.6.Final</version>
+		</dependency>
+
+		<!-- Jetty -->
+		<dependency>
+			<groupId>org.eclipse.jetty.aggregate</groupId>
+			<artifactId>jetty-all</artifactId>
+			<version>9.1.4.v20140401</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz-jobs</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<version>7.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-util</artifactId>
+			<version>7.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<version>7.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-logging-juli</artifactId>
+			<version>7.0.2</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.7</version>
+		</dependency>
 	</dependencies>
 </project>
