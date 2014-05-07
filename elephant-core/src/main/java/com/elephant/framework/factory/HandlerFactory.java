@@ -4,7 +4,12 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.elephant.framework.network.IFHandler;
-
+/**
+ * handler工厂（handler注册器）
+ * @author file
+ * @since 2014年5月6日 下午9:25:44
+ * @version 1.0
+ */
 public final class HandlerFactory {
 	
 	private static final Map<Short,IFHandler>  handlers = new ConcurrentHashMap<Short,IFHandler>();

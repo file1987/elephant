@@ -12,7 +12,7 @@ public class ValuePair {
 	
 	private final Map<String, Object> _set = new HashMap<String, Object>();
 	
-	protected Object get(String key)
+	public Object get(String key)
 	{
 		return _set.get(key);
 	}

@@ -5,7 +5,13 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 import org.apache.commons.pool.BaseObjectPool;
 import org.apache.commons.pool.PoolableObjectFactory;
-
+/**
+ * 对象池
+ * @author file
+ * @since 2014年5月6日 下午9:24:19
+ * @version 1.0
+ * @param <T>
+ */
 public class FObjectPool<T> extends BaseObjectPool<T>{
 	
 	private  final Queue<T> pools = new ConcurrentLinkedQueue<T>();

@@ -102,5 +102,11 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.7</version>
 		</dependency>
+		<!-- cvs -->
+		<dependency>
+			<groupId>org.ostermiller</groupId>
+			<artifactId>utils</artifactId>
+			<version>1.07.00</version>
+		</dependency>
 	</dependencies>
 </project>

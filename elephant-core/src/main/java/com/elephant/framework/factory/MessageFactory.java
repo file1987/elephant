@@ -8,7 +8,12 @@ import com.elephant.framework.network.msg.IFReceviceMessage;
 import com.elephant.framework.network.msg.IFSendableMessage;
 import com.elephant.framework.pools.FObjectPool;
 import com.elephant.framework.pools.FPoolableObjectFactory;
-
+/**
+ * 消息工厂（注册器）
+ * @author file
+ * @since 2014年5月6日 下午9:25:08
+ * @version 1.0
+ */
 public final class MessageFactory {
 	
 	private static final Map<Short,FObjectPool<IFNetMessage>>  messages = new ConcurrentHashMap<Short,FObjectPool<IFNetMessage>>();

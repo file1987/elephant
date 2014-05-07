@@ -14,7 +14,12 @@ import com.lmax.disruptor.SleepingWaitStrategy;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.ProducerType;
 
-
+/**
+ * Disruptors 工厂
+ * @author file
+ * @since 2014年5月6日 下午9:26:15
+ * @version 1.0
+ */
 public class DisruptorsFactroy {
 	
 	private static final Map<String,List<Disruptor<IFEvent>>> disruptorsMap = new HashMap<String,List<Disruptor<IFEvent>>>();
