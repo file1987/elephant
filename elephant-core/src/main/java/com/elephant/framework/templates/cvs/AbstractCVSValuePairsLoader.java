@@ -3,15 +3,16 @@ package com.elephant.framework.templates.cvs;
 import java.io.IOException;
 import java.util.Collection;
 
+import com.elephant.framework.templates.AbstractDefaultValuePairsLoader;
 import com.elephant.framework.templates.IFTemplatesValuePairsLoader;
 import com.elephant.framework.templates.ValuePair;
 import com.elephant.framework.utils.CSVUtils;
 
-public abstract class AbstractCVSValuePairsLoader implements IFTemplatesValuePairsLoader {
+public abstract class AbstractCVSValuePairsLoader extends AbstractDefaultValuePairsLoader implements IFTemplatesValuePairsLoader {
 
 
 	@Override
-	public Collection<ValuePair> loadValuePairs() {
+	public Collection<ValuePair> loaderData() {
 		try {
 			return CSVUtils.readCsv2ValuePairs(getFilePath());
 		} catch (IOException e) {
@@ -20,7 +21,7 @@ public abstract class AbstractCVSValuePairsLoader implements IFTemplatesValuePai
 	}
 
 	@Override
-	public void reloadValuePairs(Collection<ValuePair> values) {
+	public void reLoaderData(Collection<ValuePair> values) {
 		try {
 			Collection<ValuePair> _values = CSVUtils.readCsv2ValuePairs(getFilePath());
 			values = _values;
@@ -31,11 +32,11 @@ public abstract class AbstractCVSValuePairsLoader implements IFTemplatesValuePai
 	}
 
 	@Override
-	public void reloadValuePair(ValuePair value,String key) {
+	public void reloadValuePair(ValuePair value) {
 		try {
 			Collection<ValuePair> _values = CSVUtils.readCsv2ValuePairs(getFilePath());
 			for(ValuePair valuePair:_values){
-				if(value.get(key).equals(valuePair.get(key))){
+				if(value.get(getUnionKey()).equals(valuePair.get(getUnionKey()))){
 					value = valuePair;
 					break;
 				}

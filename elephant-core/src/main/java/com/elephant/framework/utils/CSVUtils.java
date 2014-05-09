@@ -4,7 +4,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+
 import com.Ostermiller.util.CSVParser;
+import com.elephant.framework.network.telnet.netty.NettyTelnetServer;
 import com.elephant.framework.templates.ValuePair;
 
 public class CSVUtils {
@@ -59,8 +61,13 @@ public class CSVUtils {
 		return valuePairs;
 	}
 	
-	public static void main(String[] args) throws IOException {
-		readCsv2ValuePair("D://activity.csv");
+	public static void main(String[] args) throws Exception {
+		//readCsv2ValuePair("D://activity.csv");
+		
+		
+		NettyTelnetServer telnetServer = new NettyTelnetServer(10000);
+		telnetServer.startUp();
+		
 	}
 
 }

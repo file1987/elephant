@@ -1,13 +1,17 @@
 package com.elephant.framework.templates;
 
 import java.util.Collection;
-
-public interface IFTemplatesValuePairsLoader extends IFTemplatesLoader {
-	
-	public Collection<ValuePair> loadValuePairs();
-	
-	public void reloadValuePairs(Collection<ValuePair> values);
-	
-	public void reloadValuePair(ValuePair value,String key);
+/**
+ * 列表类型数据加载器接口
+ * @author file
+ * @since 2014年5月9日 下午5:57:00
+ * @version 1.0
+ */
+public interface IFTemplatesValuePairsLoader extends IFTemplatesLoader<Collection<ValuePair>> {
+	/**
+	 * 对当前列表某条数据进行重新加载		
+	 * @param value 当前数据
+	 */
+	public void reloadValuePair(ValuePair value);
 	
 }
