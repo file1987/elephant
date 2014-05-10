@@ -3,6 +3,7 @@ package com.elephant.framework.templates.cvs;
 import java.io.IOException;
 import java.util.Collection;
 
+import com.elephant.framework.exception.ReadDataException;
 import com.elephant.framework.templates.AbstractDefaultValuePairsLoader;
 import com.elephant.framework.templates.IFTemplatesValuePairsLoader;
 import com.elephant.framework.templates.ValuePair;
@@ -16,7 +17,7 @@ public abstract class AbstractCVSValuePairsLoader extends AbstractDefaultValuePa
 		try {
 			return CSVUtils.readCsv2ValuePairs(getFilePath());
 		} catch (IOException e) {
-			throw new RuntimeException(e);
+			throw new ReadDataException(e);
 		}
 	}
 
@@ -26,7 +27,7 @@ public abstract class AbstractCVSValuePairsLoader extends AbstractDefaultValuePa
 			Collection<ValuePair> _values = CSVUtils.readCsv2ValuePairs(getFilePath());
 			values = _values;
 		} catch (IOException e) {
-			throw new RuntimeException(e);
+			throw new ReadDataException(e);
 		}
 
 	}

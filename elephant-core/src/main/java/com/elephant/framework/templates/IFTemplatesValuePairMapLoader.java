@@ -13,7 +13,7 @@ public interface IFTemplatesValuePairMapLoader extends IFTemplatesLoader<Map<Str
 	 * 对一个列表数据进行重新加载		
 	 * @param sheetName  列表key
 	 */
-	public void reloadValuePairs(String sheetName);
+	public void reloadValuePairs(Map<String, Collection<ValuePair>> valuePairMap,String sheetName);
 	
 	/**
 	 * 对一个列表中的一条数据进行重新加载
