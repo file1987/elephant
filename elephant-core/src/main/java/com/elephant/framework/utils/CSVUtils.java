@@ -4,9 +4,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 import com.Ostermiller.util.CSVParser;
+import com.elephant.framework.templates.IFTemplatesLoader;
 import com.elephant.framework.templates.ValuePair;
+import com.elephant.framework.templates.xml.AbstractXmlValuePairMapLoader;
 
 public class CSVUtils {
 	
@@ -67,8 +70,22 @@ public class CSVUtils {
 		NettyTelnetServer telnetServer = new NettyTelnetServer(10000);
 		telnetServer.startUp();*/
 		
-		ExcelUtils.readExcel2ValuePairMap("D://VIP.xlsx");
-		
+		//ExcelUtils.readExcel2ValuePairMap("D://VIP.xlsx");
+		//XmlUtils.readXml2ValuePair("D://Test.xml");
+		IFTemplatesLoader<Map<String,Collection<ValuePair>>> xml = new AbstractXmlValuePairMapLoader() {
+			
+			@Override
+			public String getUnionKey() {
+				return "k";
+			}
+			
+			@Override
+			public String getFilePath() {
+				return "D://Test.xml";
+			}
+		};
+		xml.toJsonFile("D://Test.json");
+		xml.toLuaFile("D://Test.lua", "testVar");
 	}
 
 }
