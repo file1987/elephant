@@ -137,12 +137,19 @@
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>3.10-FINAL</version>
 		</dependency>
-		
+
 		<!-- dom4j 解析xml -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>openxml4j</artifactId>
 			<version>1.0-beta</version>
 		</dependency>
+        <!-- 数据库连接池 proxool -->
+		<dependency>
+			<groupId>com.cloudhopper.proxool</groupId>
+			<artifactId>proxool</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+
 	</dependencies>
 </project>

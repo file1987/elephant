@@ -23,7 +23,15 @@ import com.lmax.disruptor.dsl.ProducerType;
 public class DisruptorsFactroy {
 	
 	private static final Map<String,List<Disruptor<IFEvent>>> disruptorsMap = new HashMap<String,List<Disruptor<IFEvent>>>();
-	
+	/**
+	 * 注册Disruptors
+	 * @param key  事件key
+	 * @param disruptorSize 
+	 * @param buffSize
+	 * @param executor
+	 * @param factory
+	 * @param handler
+	 */
 	@SuppressWarnings("unchecked")
 	public static void registerDisruptor(String key,int disruptorSize,int buffSize,Executor executor,EventFactory<IFEvent> factory, EventHandler<IFEvent> handler){		
 		List<Disruptor<IFEvent>>  disruptors = disruptorsMap.get(key);
@@ -38,12 +46,20 @@ public class DisruptorsFactroy {
 		}
 		disruptorsMap.put(key, disruptors);
 	}
-	
+	/**
+	 * 注册Disruptors
+	 * @param key   事件key
+	 * @param executor
+	 * @param factory
+	 * @param handler
+	 */
 	public static void registerDisruptor(String key,Executor executor,EventFactory<IFEvent> factory, EventHandler<IFEvent> handler){		
 		registerDisruptor(key, Runtime.getRuntime().availableProcessors(), (int) Math.pow(2, 15), executor, factory, handler);
 	}
 	
-	
+	/**
+	 * 注销Disruptors
+	 */
 	public static void unregisterAll(){
 		for(List<Disruptor<IFEvent>> disruptors:disruptorsMap.values()){
 			for(Disruptor<IFEvent> disruptor:disruptors){
@@ -52,7 +68,12 @@ public class DisruptorsFactroy {
 		}
 		disruptorsMap.clear();
 	}
-	
+	/**
+	 * 获取Disruptor
+	 * @param key 事件key
+	 * @param hashCode hashcode
+	 * @return
+	 */
 	public static Disruptor<IFEvent> getDisruptor(String key,long hashCode){
 		List<Disruptor<IFEvent>>  disruptors = disruptorsMap.get(key);
 		int size = disruptors.size();
@@ -60,11 +81,20 @@ public class DisruptorsFactroy {
 		mod = mod < 0 || mod >= size ? 0 : mod;
 		return disruptors.get(mod);
 	}
-	
+	/**
+	 * 发布事件
+	 * @param key
+	 * @param hashCode
+	 * @param eventTranslator
+	 */
 	public static void publishEvent(String key,long hashCode,EventTranslator<IFEvent> eventTranslator){
 		publishEvent(getDisruptor(key, hashCode),eventTranslator);
 	}
-	
+	/**
+	 * 发布事件
+	 * @param disruptor
+	 * @param eventTranslator
+	 */
 	public static void publishEvent(Disruptor<IFEvent> disruptor,EventTranslator<IFEvent> eventTranslator){
 		disruptor.publishEvent(eventTranslator);
 	}

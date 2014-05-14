@@ -1,5 +1,10 @@
 package com.elephant.framework.exception;
-
+/**
+ * 数据库异常
+ * @author file
+ * @since 2014年5月14日 下午5:50:49
+ * @version 1.0
+ */
 public class DatabaseException extends RuntimeException {
 
 	/**

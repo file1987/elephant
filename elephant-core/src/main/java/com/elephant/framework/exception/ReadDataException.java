@@ -1,6 +1,6 @@
 package com.elephant.framework.exception;
 /**
- * 
+ * 读取数据异常（一般是load数据配置）
  * @author file
  * @since 2014年5月10日 下午3:10:57
  * @version 1.0
